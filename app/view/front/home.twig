@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-gray-600 p-4 text-white flex justify-between items-center">
+        <div class="text-xl font-bold ml-4">mvcArticle</div>
+        <div class="space-x-4 mr-4">
+            <a href="/login" class="hover:underline">Login</a>
+            <a href="/register" class="hover:underline">Register</a>
+        </div>
+    </nav>
+    <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg mt-10 mb-16">
+        <h1 class="text-4xl font-extrabold text-center  mb-6">All Articles</h1>
+
+       {% if articles is not empty %}
+            {% for article in articles %}
+                <div class="mb-6">
+                    <a href="article/{{ article.id }}"<h2 class="text-2xl font-semibold text-indigo-600 mb-2">{{ article.title }}</h2></a>
+                    
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No articles found.</p>
+        {% endif %}
+
+    </div>
+</body>
+</html>
